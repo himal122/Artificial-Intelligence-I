@@ -179,7 +179,6 @@ class AStarSearch(SingleMemberSearch):
 
         # <==== insert your pseudo-code and code above here
         return next_soln
-
 wall_colour= 0.0
 hole_colour = 1.0
 
@@ -187,224 +186,46 @@ def create_maze_breaks_depthfirst():
     # ====> insert your code below here
     #remember to comment out any mention of show_maze() before you submit your work
 
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
+     # Load base maze
+    maze = Maze(mazefile="maze.txt")
 
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
+    maze.contents[3][4] = hole_colour  # Open path to trick DFS
+    maze.contents[8][4] = wall_colour  # Block DFS at the end
 
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
+    maze.contents[10][6] = hole_colour  # Another DFS trap
+    maze.contents[14][6] = wall_colour  # Dead-end
+    maze.contents[16][1] = hole_colour  # Dead-end
+    maze.contents[19][4] = hole_colour  # Dead-end
 
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
+    maze.contents[8][1] = hole_colour
+    maze.contents[12][9] = wall_colour
+    maze.contents[11][12] = wall_colour
+    maze.contents[9][2] = wall_colour
+    maze.contents[10][19] = wall_colour
+    maze.contents[18][5] = wall_colour
+    
+    # Save the maze
+    maze.save_to_txt("maze-breaks-depth.txt")
 
     # reload into new maze object
     print('this is the reloaded maze')
     reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
     
     # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
 
-def create_maze_breaks_depthfirst():
+def create_maze_depth_better():
     # ====> insert your code below here
     #remember to comment out any mention of show_maze() before you submit your work
 
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[17][3] = wall_colour
-    maze_with_hole_and_wall.contents[19][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
     # ====> insert your code below here
     #remember to comment out any mention of show_maze() before you submit your work
+    maze = Maze(mazefile="maze.txt")
+    maze.contents[1][8] = wall_colour
+    maze.contents[9][10] = wall_colour
+    maze.contents[15][6] = wall_colour
+    maze.contents[13][2] = wall_colour
+    maze.contents[12][13] = wall_colour
+    maze.contents[2][13] = wall_colour
+    maze.save_to_txt("maze-depth-better.txt")
 
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[17][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
-    # ====> insert your code below here
-    #remember to comment out any mention of show_maze() before you submit your work
-
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[16][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
-    # ====> insert your code below here
-    #remember to comment out any mention of show_maze() before you submit your work
-
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[16][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-    maze_with_hole_and_wall.contents[17][1] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
-    # ====> insert your code below here
-    #remember to comment out any mention of show_maze() before you submit your work
-
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[16][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-    maze_with_hole_and_wall.contents[16][1] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
-    # ====> insert your code below here
-    #remember to comment out any mention of show_maze() before you submit your work
-
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[16][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-    maze_with_hole_and_wall.contents[16][1] = hole_colour
-    maze_with_hole_and_wall.contents[20][4] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
-    # <==== insert your code above here
-wall_colour= 0.0
-hole_colour = 1.0
-
-def create_maze_breaks_depthfirst():
-    # ====> insert your code below here
-    #remember to comment out any mention of show_maze() before you submit your work
-
-    # Load original maze
-    maze_with_hole_and_wall = Maze(mazefile="maze.txt")
-
-    # Create a series of walls and holes to mislead DFS
-    maze_with_hole_and_wall.contents[11][13] = wall_colour
-    maze_with_hole_and_wall.contents[16][3] = wall_colour
-    maze_with_hole_and_wall.contents[18][5] = wall_colour
-
-    maze_with_hole_and_wall.contents[8][2] = hole_colour
-    maze_with_hole_and_wall.contents[8][3] = hole_colour
-    maze_with_hole_and_wall.contents[5][5] = hole_colour
-    maze_with_hole_and_wall.contents[5][4] = hole_colour
-    maze_with_hole_and_wall.contents[16][1] = hole_colour
-    maze_with_hole_and_wall.contents[19][4] = hole_colour
-
-    # save edited maze to new file
-    maze_with_hole_and_wall.save_to_txt("maze-breaks-depth.txt")
-
-    # reload into new maze object
-    print('this is the reloaded maze')
-    reloaded_maze = Maze(mazefile="maze-breaks-depth.txt")
-    
     # <==== insert your code above here
